@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia Game</title>
+
+    <!-- Link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+
+
+    <!-- AND/OR YOUR OWN CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+
+<body>
+    <main role="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h1 id="title" class="display-4">TRIVIA</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <h1 id="theme" class="display-4"></h1>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h1 id="question" class="display-10 text-center"></h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div id="button1" class="col-md-6">
+
+                                </div>
+                                <div id="button2" class="col-md-6">
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div id="button3" class="col-md-6">
+
+                                </div>
+                                <div id="button4" class="col-md-6">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="stats" class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            QUESTIONS
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <h1 id="random-score" class="display-10 text-center">1</h1>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            QUESTIONS REMAINING
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <h1 id="total-wins" class="display-10 text-center">0</h1>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            TIMER
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <h1 id="total-wins" class="display-10 text-center">0</h1>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Link to your JavaScript -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
+</html>
