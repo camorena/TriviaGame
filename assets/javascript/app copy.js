@@ -9,10 +9,7 @@ var tq = [];  // Trivia questions
 var to = [];  // Trivia options
 var ta;       // Trivia answer
 var qn = 0;   // Question Number 
-var ra = 0;   // right answers
-var wa = 0;   // wrong answers
-
-nextTheme();
+var qr = 0;   // questions remaining 
 
 $("#stats").hide();
 
@@ -24,46 +21,33 @@ function nextTheme() {
 function nextTrivia() {
     tq = tt.trivia;
     console.log("Trivia [tq]", tq, " Length ", tq.length);
-
+    qn = 0;
     to = tq[qn].options;
     console.log("Trivia options [to]", to);
     ta = tq[qn].answer;
     console.log("Trivia answer [ta]", ta);
 }
-function nextQuestion() {
-    console.log("next question : ", qn)
-    qn++;
-    if (qn === tq.length) {
-        showResults();
-        qn = 0;
-    }
-    $("#trivia").empty();
-}
-function evalAnswer(resp) {
-    for (i = 0; i < to.length; i++) {
-        btnId = "button[data-option=" + (i + 1) + "]";
-        //console.log(btnId);
 
-        if ((i + 1) === resp) {
-            if (i === ta) {
-                $(btnId).attr("class", "btn btn-success btxn-lg btn-block glyphicon check");
-                ra++;   //increment right answers total
+function nextQuestion() {
+    qn++;
+}
+
+function evalAnswer(resp) {
+    for (i = 1; i < to.length; i++) {
+        btnId = "button[data-option=" + i + "]";
+        //console.log(btnId);
+        if ((i === resp) && (i == ta)) {
+            $(btnId).attr("class", "btn btn-success btn-lg btn-block");
+        } else {
+            if ((i === resp) && (i = !ta)) {
+                $(btnId).attr("class", "btn btn-danger btn-lg btn-block");
+            } else {
+                $(btnId).fadeTo("slow", 0.15);
             }
-            else {
-                $(btnId).attr("class", "btn btn-danger btn-lg btn-block glyphicon menu-close");
-                $("#question").text("Answer : " + tq[qn].options[ta]);
-                wa++   //increment wrong answers total
-            }
-        }
-        else {
-            $(btnId).fadeTo("slow", 0.15);
         }
     }
-    setTimeout(function () {
-        nextQuestion()
-        showTrivia();
-    }, 1000);
 }
+
 function showTrivia() {
 
     $("#theme").text(tt.theme);
@@ -80,7 +64,9 @@ function showTrivia() {
 
         btn.attr("data-option", i + 1);
 
-        btn.attr("id", "btn" + i + 1);
+        btn.attr("id", "btn" + i);
+
+
 
         btn.text(tq[qn].options[i]);
 
@@ -89,6 +75,7 @@ function showTrivia() {
         $(div).append(btn);
     }
 }
+
 function addButtonDiv() {
     // Add first "row" 
 
@@ -152,27 +139,16 @@ function addButtonDiv() {
     $("#row2").append(newBtn);
 
 }
-function showResults() {
-    $("#stats").show();
-    $("#right").text(ra);
-    $("#wrong").text(wa);
-}
-$(document).on("click", '.btn', function (event) {
+
+
+$(".btn").on("click", function (event) {
     btnid = $(this).attr("data-option");
-    evalAnswer(parseInt(btnid));
+    evalAnswer(parseInt(btnid)); 
 });
+
 $("#start").on("click", function (event) {
     event.preventDefault();
     $("#start").remove();
-    nextTheme();
-    nextTrivia();
-    showTrivia();
-});
-$(document).on("click", '#again', function (event) {
-    $("#stats").hide();
-    $("#trivia").empty();
-    ra = 0;   // right answers
-    wa = 0;   // wrong answers
     nextTheme();
     nextTrivia();
     showTrivia();

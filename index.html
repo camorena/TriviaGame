@@ -31,88 +31,70 @@
                 </div>
             </div>
             <div class="row">
-                    <div class="col-md-12">
-                        <div class="text-center">
-                            <h1 id="theme" class="display-4"></h1>
-                        </div>
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h1 id="theme" class="display-4"></h1>
                     </div>
                 </div>
+            </div>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header text-center">
+                        <div id="card-header" class="p-3 mb-2 bg-primary text-white card-header text-center">
                             <h1 id="question" class="display-10 text-center"></h1>
                         </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div id="button1" class="col-md-6">
-
-                                </div>
-                                <div id="button2" class="col-md-6">
-
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div id="button3" class="col-md-6">
-
-                                </div>
-                                <div id="button4" class="col-md-6">
-
-                                </div>
-                            </div>
+                        <div id="trivia" class="card-body">
+                            <button id="start" type="button" class="btn-warning btn-lg btn-block">START</button>
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
 
         <div id="stats" class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="card-header text-center">
-                            QUESTIONS
+                            CORRECT
                         </div>
                         <div class="card-body">
                             <p class="card-text">
-                                <h1 id="random-score" class="display-10 text-center">1</h1>
+                                <h1 id="right" class="display-10 text-center"></h1>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="card-header text-center">
-                            QUESTIONS REMAINING
+                            INCORRECT
                         </div>
                         <div class="card-body">
                             <p class="card-text">
-                                <h1 id="total-wins" class="display-10 text-center">0</h1>
+                                <h1 id="wrong" class="display-10 text-center"></h1>
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            TIMER
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                <h1 id="total-wins" class="display-10 text-center">0</h1>
-                            </p>
-                        </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <button id="again" type="button" class="btn-warning btn-lg btn-block">PLAY AGAIN</button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
     <!-- Link to your JavaScript -->
+    <script type="text/javascript" src="assets/javascript/questions.js"></script>
+    <script type="text/javascript" src="assets/javascript/watch.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+ 
 </body>
 
 </html>
